@@ -13,8 +13,8 @@ function draw()
 background('#969A97');
 document.getElementById("span").innerHTML = "Size of font will be =" +difference+"px";
 fill('#F90093');
-stroke('F90093');
-square(wristX, wristY, difference);    
+textSize('25px');
+text('Daiwik', 40, 10);    
 }
 
 function modelLoaded()
@@ -30,5 +30,9 @@ console.log(results);
 noseX = results[0].pose.wrist.x;
 noseY = results[0].pose.wrist.y;
 console.log("wristX = " +wrisyX+ "wristY="+ wristY);
+leftWristX= results[0].pose.leftWrist.x;
+rightWristX= results[0].pose.rightWrist.x;
+difference= floor(leftWristX - rightWristX);
 }
 }
+
